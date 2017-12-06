@@ -1,0 +1,77 @@
+
+h1{
+  text-transform: none;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: -1px;
+  font-size: 22px;
+  padding-top: 5px;
+  letter-spacing: 2px;
+}
+
+h2{
+  text-transform: none;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 50;
+  letter-spacing: 3px;
+  font-size: 12px;
+  
+}
+
+
+p  {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.bg-content {
+  background: url('../img/jamaica.png') no-repeat center top;
+  background-size: cover;
+  position: relative;
+}
+
+
+.container{
+  padding: 300px;
+  margin: auto;
+}
+
+
+.translucent-form-overlay {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
+
