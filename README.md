@@ -1,2 +1,1 @@
-# jordancooper.me
-Personal Website
+# TECH ON ROAD JA
