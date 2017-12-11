@@ -147,7 +147,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs_jcFvTqmSLZC6ZD8T5WZXKMvxi74T0&callback=initMap"></script>
   <script>
     function initMap() {
       var mapOptions = {
@@ -155,7 +155,6 @@
         zoom: 15
       }
       var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
-      infoWindow = new google.maps.InfoWindow;
 
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
@@ -165,29 +164,26 @@
             lng: position.coords.longitude
           };
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Not your location?');
-          infoWindow.open(map);
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: map
+          });
           map.setCenter(pos);
         }, function () {
-          handleLocationError(true, infoWindow, map.getCenter());
+          handleLocationError(true, map.getCenter());
         });
       } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(false, map.getCenter());
       }
     }
 
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-      infoWindow.open(map);
+    function handleLocationError(browserHasGeolocation, pos) {
+      var location = prompt("Where are you?");
     }
 
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs_jcFvTqmSLZC6ZD8T5WZXKMvxi74T0&callback=initMap"></script>
+
 </body>
 
 </html>
