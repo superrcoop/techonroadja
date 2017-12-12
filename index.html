@@ -96,6 +96,7 @@
                     type="text" placeholder="Your name">
                 </div>
 
+                <input type="hidden" name="location">
                 <div class="form-group g-mb-10">
                   <input class="form-control g-font-size-15 g-font-secondary g-color-white-opacity-0_8 g-placeholder-inherit g-theme-bg-gray-dark-v1 u-shadow-v16 g-brd-none g-rounded-1 g-pa-10"
                     type="tel" placeholder="Your phone number">
@@ -176,6 +177,7 @@
             lng: position.coords.longitude
           };
 
+          document.getElementById("input[name='location']").value = JSON.stringify(pos);
           var marker = new google.maps.Marker({
             position: pos,
             map: map
