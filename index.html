@@ -177,7 +177,7 @@
             lng: position.coords.longitude
           };
 
-          document.getElementById("input[name='location']").value = JSON.stringify(pos);
+          document.querySelector("input[name='location']").value = JSON.stringify(pos);
           var marker = new google.maps.Marker({
             position: pos,
             map: map
