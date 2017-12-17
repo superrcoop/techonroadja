@@ -157,32 +157,41 @@
         <p class="mb-0">Fill in your details below and we'll contact you to confirm your order.</p>
       </div>
 
-      <form>
+      <form id="contact">
         <div class="row">
           <div class="col-md-6 form-group g-color-gray-dark-v5 g-mb-30">
             <input id="inputGroup1_1" class="form-control g-font-size-default g-placeholder-inherit g-bg-white g-bg-white--focus g-theme-brd-gray-light-v1 g-rounded-20 g-px-10 g-py-13"
-              type="text" placeholder="Your name">
+              type="text" placeholder="Your name"
+              "customerName">
           </div>
 
           <div class="col-md-6 form-group g-color-gray-dark-v5 g-mb-30">
             <input id="inputGroup1_2" class="form-control g-font-size-default g-placeholder-inherit g-bg-white g-bg-white--focus g-theme-brd-gray-light-v1 g-rounded-20 g-px-10 g-py-13"
-              type="tel" placeholder="Your phone">
+              type="tel" placeholder="Your phone"
+              name="phoneNumber">
           </div>
 
-          <input type="hidden" name="location">
+          <input type="hidden" name="location" value="null">
           <div class="col-md-12 form-group g-color-gray-dark-v5 g-mb-30">
             <input id="inputGroup1_3" class="form-control g-font-size-default g-placeholder-inherit g-bg-white g-bg-white--focus g-theme-brd-gray-light-v1 g-rounded-20 g-px-10 g-py-13"
-              type="email" placeholder="Your email">
+              type="email" placeholder="Your email"
+              name="emailAddress">
           </div>
 
           <div class="col-md-12 form-group g-color-gray-dark-v5 g-mb-30">
             <textarea id="inputGroup1_4" class="form-control g-resize-none g-font-size-default g-placeholder-inherit g-bg-white g-bg-white--focus g-theme-brd-gray-light-v1 g-rounded-20 g-px-10 g-py-13"
-              rows="6" placeholder="What's the problem?"></textarea>
+              rows="6" placeholder="What's the problem?"
+              name="problemDescrption"></textarea>
           </div>
+          <div class="col-md-12 form-group g-color-gray-dark-v5 g-mb-30">
+              <textarea id="inputGroup1_4" class="form-control g-resize-none g-font-size-default g-placeholder-inherit g-bg-white g-bg-white--focus g-theme-brd-gray-light-v1 g-rounded-20 g-px-10 g-py-13"
+                rows="6" placeholder="How can we find you?"
+                name="directions"></textarea>
+            </div>
         </div>
 
         <div class="text-center">
-          <button class="btn u-btn-green btn-md text-uppercase g-font-weight-700 g-font-size-12 g-rounded-30 g-px-40 g-py-15 mb-0"
+          <button id="send" class="btn u-btn-green btn-md text-uppercase g-font-weight-700 g-font-size-12 g-rounded-30 g-px-40 g-py-15 mb-0"
             type="submit" role="button">Send </button>
         </div>
       </form>
@@ -212,30 +221,29 @@
     </div>
   </footer>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
     crossorigin="anonymous"></script>
   <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
   <script>
     function initMap() {
-      var mapOptions = {
+      const mapOptions = {
         center: new google.maps.LatLng(18.006013, -76.747103),
         zoom: 15
       }
-      var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
+      const map = new google.maps.Map(document.getElementById("Map"), mapOptions);
 
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
-          var pos = {
+          const pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
 
           document.querySelector("input[name='location']").value = JSON.stringify(pos);
-          var marker = new google.maps.Marker({
+          const marker = new google.maps.Marker({
             position: pos,
             map: map
           });
@@ -253,7 +261,7 @@
       }
     }
   </script>
+  <script defer src="js/postform.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvs_jcFvTqmSLZC6ZD8T5WZXKMvxi74T0&callback=initMap"></script>
 </body>
-
 </html>
