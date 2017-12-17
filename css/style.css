@@ -64,6 +64,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
+
+/* Color Dark Blue */
+.g-bg-darkblue {
+  background-color: #009 !important;
+}
+
+.g-bg-darkblue-opacity-0_9 {
+  background-color: rgba(25, 34, 47, 0.9) !important;
+}
+
 /*------------------------------------
   Highlight Color
 ------------------------------------*/
@@ -26247,7 +26257,7 @@ pre[class*="language-"] .toolbar-item a {
 }
 
 .g-bg-primary--hover:hover {
-  background-color: #ee4136 !important;
+  background-color: green !important;
 }
 
 .u-block-hover:hover .g-bg-primary--hover {
@@ -28043,7 +28053,7 @@ pre[class*="language-"] .toolbar-item a {
 ------------------------------------*/
 /* Primary Colors */
 .g-brd-primary {
-  border-color: #ee4136 !important;
+  border-color: green !important;
 }
 
 .g-brd-primary--before::before {
